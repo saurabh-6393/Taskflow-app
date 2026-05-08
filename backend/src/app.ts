@@ -33,6 +33,15 @@ app.get('/api/health', (_req, res) => {
   res.json({ status: 'ok', timestamp: new Date().toISOString() });
 });
 
+// Root route hint (helps when opening backend URL directly)
+app.get('/', (_req, res) => {
+  res.status(200).json({
+    status: 'ok',
+    message: 'Taskflow backend is running',
+    health: '/api/health',
+  });
+});
+
 // 404 handler
 app.use((_req, res) => {
   res.status(404).json({ status: 'error', message: 'Route not found' });
