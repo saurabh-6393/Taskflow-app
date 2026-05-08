@@ -1,10 +1,8 @@
 import React, { useState, useRef, useEffect } from 'react';
-import { useNavigate } from 'react-router-dom';
 import apiClient from '../../services/apiClient';
 import type { ActivityLog } from '../../types';
 
 const NotificationDropdown: React.FC = () => {
-  const navigate = useNavigate();
   const [open, setOpen] = useState(false);
   const [notifications, setNotifications] = useState<ActivityLog[]>([]);
   const [readIds, setReadIds] = useState<Set<string>>(() => {

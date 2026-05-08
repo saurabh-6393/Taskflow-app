@@ -1,0 +1,11 @@
+{
+  "name": "taskflow-app",
+  "private": true,
+  "workspaces": [
+    "frontend"
+  ],
+  "scripts": {
+    "build": "npm run build --workspace frontend",
+    "start": "npm run preview --workspace frontend -- --host 0.0.0.0 --port ${PORT:-4173}"
+  }
+}
