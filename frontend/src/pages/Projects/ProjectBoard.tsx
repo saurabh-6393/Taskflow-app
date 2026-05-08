@@ -192,7 +192,7 @@ const ProjectBoard: React.FC = () => {
       if (task && task.status !== targetStatus) {
         const previousStatus = task.status;
         // Optimistic update
-        setTasks(prev => prev.map(t => t.id === taskId ? { ...t, status: targetStatus } : t));
+        setTasks(prev => prev.map(t => t.id === taskId ? { ...t, status: targetStatus as Task['status'] } : t));
         try {
           await apiClient.patch(`/tasks/${taskId}/status`, { status: targetStatus });
           const targetColumnLabel = COLUMNS.find(c => c.key === targetStatus)?.label;

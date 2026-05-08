@@ -80,6 +80,7 @@ export interface DashboardSummary {
   tasksDueToday: number;
   projectsCount: number;
   recentActivity: ActivityLog[];
+  tasksPerUser?: { name: string; value: number }[];
 }
 
 export interface ApiResponse<T> {
