@@ -79,6 +79,10 @@ export interface DashboardSummary {
   overdueTasks: number;
   tasksDueToday: number;
   projectsCount: number;
+  tasksPerUser?: Array<{
+    name: string;
+    value: number;
+  }>;
   recentActivity: ActivityLog[];
 }
 
