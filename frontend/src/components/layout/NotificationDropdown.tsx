@@ -1,10 +1,8 @@
 import React, { useState, useRef, useEffect } from 'react';
-
 import apiClient from '../../services/apiClient';
 import type { ActivityLog } from '../../types';
 
 const NotificationDropdown: React.FC = () => {
-
   const [open, setOpen] = useState(false);
   const [notifications, setNotifications] = useState<ActivityLog[]>([]);
   const [readIds, setReadIds] = useState<Set<string>>(() => {
