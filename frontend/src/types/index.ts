@@ -84,7 +84,7 @@ export interface DashboardSummary {
     value: number;
   }>;
   recentActivity: ActivityLog[];
-  tasksPerUser?: { name: string; value: number }[];
+
 }
 
 export interface ApiResponse<T> {
