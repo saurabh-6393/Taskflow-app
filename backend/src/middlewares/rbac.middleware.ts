@@ -16,7 +16,7 @@ export const requireProjectRole = (...allowedRoles: string[]) => {
   return async (req: Request, _res: Response, next: NextFunction) => {
     try {
       const user = (req as any).user;
-      const projectId = req.params.id || req.params.projectId;
+      const projectId = (req.params.id || req.params.projectId) as string;
 
       if (!projectId) {
         return next(new ApiError(400, 'Project ID is required'));
