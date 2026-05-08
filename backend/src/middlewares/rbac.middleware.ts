@@ -31,7 +31,7 @@ export const requireProjectRole = (...allowedRoles: string[]) => {
         where: {
           userId_projectId: {
             userId: user.id,
-            projectId: projectId,
+            projectId: projectId as string,
           },
         },
       });
