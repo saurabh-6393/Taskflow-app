@@ -178,10 +178,10 @@ const ProjectBoard: React.FC = () => {
     const overId = over.id as string;
 
     // Identify the target status
-    let targetStatus: string | null = null;
+    let targetStatus: Task['status'] | null = null;
     
     if (COLUMNS.some(c => c.key === overId)) {
-      targetStatus = overId; // Dropped directly on column
+      targetStatus = overId as Task['status']; // Dropped directly on column
     } else {
       const overTask = tasks.find(t => t.id === overId);
       if (overTask) targetStatus = overTask.status; // Dropped on another task
